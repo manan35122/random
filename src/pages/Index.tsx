@@ -178,7 +178,7 @@ const Index = () => {
       />
 
       {/* Subtle floating emojis */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-30">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none ">
         {emojis.map((emoji, i) => (
           <FloatingEmoji key={i} emoji={emoji} delay={i * 0.8} />
         ))}
