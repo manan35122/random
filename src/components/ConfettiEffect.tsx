@@ -13,7 +13,7 @@ export const ConfettiEffect = ({ show }: { show: boolean }) => {
 
   useEffect(() => {
     if (show) {
-      const colors = ['hsl(250, 90%, 65%)', 'hsl(260, 75%, 70%)', 'hsl(280, 85%, 75%)'];
+      const colors = ['hsl(348, 100%, 48%)', 'hsl(345, 85%, 35%)', 'hsl(355, 90%, 60%)'];
       const newConfetti: Confetti[] = Array.from({ length: 40 }, (_, i) => ({
         id: i,
         left: Math.random() * 100,

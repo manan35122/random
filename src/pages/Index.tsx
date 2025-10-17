@@ -111,7 +111,7 @@ const reasons = [
 
 ];
 
-const emojis = ["✨", "💫", "⭐", "🌟", "💜", "🎯", "🚀", "🎨"];
+const emojis = ["✨", "💫", "⭐", "😇", "🫰", "😌", "🤞🏼", "❤️"];
 
 const Index = () => {
   const [currentIndex, setCurrentIndex] = useState(-1); // start with intro card
@@ -156,7 +156,7 @@ const Index = () => {
       />
       
       {/* Subtle floating emojis */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-40">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-30">
         {emojis.map((emoji, i) => (
           <FloatingEmoji key={i} emoji={emoji} delay={i * 0.8} />
         ))}
@@ -182,6 +182,7 @@ const Index = () => {
             </p>
             <div className="flex items-center justify-center gap-3 text-lg">
               <div className="flex items-center gap-2 px-6 py-2 rounded-full bg-muted/50 backdrop-blur-sm border border-primary/20">
+                 <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse-glow" />
                 <span className="font-black text-4xl text-primary">
                   {currentIndex + 1}
                 </span>
