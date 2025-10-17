@@ -139,22 +139,44 @@ const Index = () => {
     setShowConfetti(true);
     setTimeout(() => setShowConfetti(false), 100);
   };
+  const getTwilightColors = () => ({
+    primary: 'hsl(348, 100%, 48%)',  // Cherry red
+    secondary: 'hsl(330, 70%, 35%)',  // Deep purple-red
+    accent: 'hsl(340, 80%, 40%)'
+  });
+  const getGradientForProgress = () => {
+    {
+      // Twilight phase
+      const twilight = getTwilightColors();
+      return `radial-gradient(circle at 20% 30%, ${twilight.primary} 0%, transparent 45%), 
+              radial-gradient(circle at 80% 50%, ${twilight.secondary} 0%, transparent 50%),
+              radial-gradient(circle at 50% 70%, ${twilight.accent} 0%, transparent 40%)`;
+    }
+  };
 
   const isIntro = currentIndex === -1;
-   const isComplete = currentIndex === reasons.length - 1;
+  const isComplete = currentIndex === reasons.length - 1;
   const isMilestone = (currentIndex + 1) % 10 === 0;
 
   return (
     <div className="min-h-screen w-full relative overflow-hidden">
       {/* Modern gradient background */}
       <div className="fixed inset-0 bg-gradient-to-br from-background via-primary/5 to-secondary/10" />
-      <div 
+      <div
         className="fixed inset-0 opacity-30"
         style={{
           background: 'radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, hsl(var(--secondary) / 0.15) 0%, transparent 50%)',
         }}
       />
-      
+      {/* Dynamic gradient background that changes with progress */}
+      <div
+        className="fixed inset-0 transition-all duration-[2000ms] ease-in-out"
+        style={{
+          background: getGradientForProgress(),
+          opacity: 0.6
+        }}
+      />
+
       {/* Subtle floating emojis */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-30">
         {emojis.map((emoji, i) => (
@@ -182,7 +204,7 @@ const Index = () => {
             </p>
             <div className="flex items-center justify-center gap-3 text-lg">
               <div className="flex items-center gap-2 px-6 py-2 rounded-full bg-muted/50 backdrop-blur-sm border border-primary/20">
-                 <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse-glow" />
+                <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse-glow" />
                 <span className="font-black text-4xl text-primary">
                   {currentIndex + 1}
                 </span>
@@ -194,13 +216,13 @@ const Index = () => {
 
           {/* Progress Bar */}
           <div className="relative w-full bg-muted/50 rounded-full h-3 mb-6 overflow-hidden backdrop-blur-sm">
-            <div 
+            <div
               className="h-full bg-gradient-to-r from-primary to-secondary transition-all duration-700 ease-out relative"
               style={{ width: `${Math.max(1, ((currentIndex + 1) / reasons.length) * 100)}%` }}
 
             >
-              <div className="absolute inset-0 bg-white/20 animate-gradient-shift" 
-                style={{ backgroundSize: '200% 200%' }} 
+              <div className="absolute inset-0 bg-white/20 animate-gradient-shift"
+                style={{ backgroundSize: '200% 200%' }}
               />
             </div>
           </div>
@@ -228,18 +250,17 @@ const Index = () => {
               </p>
             </Card>
           ) : (
-            <Card 
+            <Card
               key={currentIndex}
-              className={`relative p-8 md:p-10 bg-card/90 backdrop-blur-xl border border-primary/10 shadow-[0_20px_60px_-10px_hsl(var(--primary)/0.15)] mb-6 overflow-hidden group ${
-                direction === 'right' ? 'animate-slide-in-right' : 'animate-slide-in-left'
-              }`}
+              className={`relative p-8 md:p-10 bg-card/90 backdrop-blur-xl border border-primary/10 shadow-[0_20px_60px_-10px_hsl(var(--primary)/0.15)] mb-6 overflow-hidden group ${direction === 'right' ? 'animate-slide-in-right' : 'animate-slide-in-left'
+                }`}
             >
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
+
               {/* Corner accent */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full" />
-              
+
               <div className="flex items-start gap-6 relative z-10">
                 <div className="flex-shrink-0 mt-2">
                   <div className="relative">
@@ -254,7 +275,7 @@ const Index = () => {
             </Card>
           )}
 
-          
+
 
           {/* Buttons */}
           <div className="flex justify-between">
