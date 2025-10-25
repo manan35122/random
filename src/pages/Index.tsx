@@ -125,7 +125,7 @@ const Index = () => {
           fontWeight: "bold",
         }}
       >
-        Pehle Tameez Seekho please 
+        If you are free tonight can we watch koi movie raat ko ??
       </div>
     );
   }
