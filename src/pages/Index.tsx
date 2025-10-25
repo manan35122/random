@@ -125,7 +125,7 @@ const Index = () => {
           fontWeight: "bold",
         }}
       >
-        If you are free tonight can we watch koi movie raat ko ??
+        when you see this message let me know, i want to see kitne time baad you open this website ahahhahaha
       </div>
     );
   }
