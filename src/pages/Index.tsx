@@ -5,6 +5,10 @@ import { ChevronLeft, ChevronRight, Sparkles, Star, Zap, PartyPopper } from "luc
 import { FloatingEmoji } from "@/components/FloatingEmoji";
 import { ConfettiEffect } from "@/components/ConfettiEffect";
 
+const SITE_STATUS: number = 0;
+
+
+
 const reasons = [
   "You are one of the most closest person to me, if i exclude my family you are the only one who knows the most about me.",
   "You care about me, you ask me about how my day went, how i am doing, even when i am sick you ask and you care",
@@ -83,7 +87,6 @@ const reasons = [
   "Sometimes you make me laugh so much that literally tears come in my eyes, i swear im not lying or exaggerating.",
   "You make me feel hopeful",
   "You are always positive most of the time.",
-
   "I dont even feel cringe around you doing weird things, you understand my humour.",
   "You respect me.",
   "We have so many memories together, we used to add random people in calls and groupchats, it was so fun doing all of this with you.",
@@ -112,6 +115,20 @@ const reasons = [
 const emojis = ["✨", "💫", "⭐", "😇", "🫰", "😌", "🤞🏼", "❤️"];
 
 const Index = () => {
+    if (SITE_STATUS === 0) {
+    return (
+      <div
+        style={{
+          textAlign: "center",
+          marginTop: "40vh",
+          fontSize: "3rem",
+          fontWeight: "bold",
+        }}
+      >
+        Pehle Tameez Seekho please 
+      </div>
+    );
+  }
   const [currentIndex, setCurrentIndex] = useState(-1); // start with intro card
   const [direction, setDirection] = useState<'left' | 'right'>('right');
   const [showConfetti, setShowConfetti] = useState(false);
@@ -138,13 +155,12 @@ const Index = () => {
     setTimeout(() => setShowConfetti(false), 100);
   };
   const getTwilightColors = () => ({
-    primary: 'hsl(348, 100%, 48%)',  // Cherry red
-    secondary: 'hsl(330, 70%, 35%)',  // Deep purple-red
+    primary: 'hsl(348, 100%, 48%)',  
+    secondary: 'hsl(330, 70%, 35%)',  
     accent: 'hsl(340, 80%, 40%)'
   });
   const getGradientForProgress = () => {
     {
-      // Twilight phase
       const twilight = getTwilightColors();
       return `radial-gradient(circle at 20% 30%, ${twilight.primary} 0%, transparent 45%), 
               radial-gradient(circle at 80% 50%, ${twilight.secondary} 0%, transparent 50%),
