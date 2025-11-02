@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, Sparkles, Star, Zap, PartyPopper } from "luc
 import { FloatingEmoji } from "@/components/FloatingEmoji";
 import { ConfettiEffect } from "@/components/ConfettiEffect";
 
-const SITE_STATUS: number = 1;
+const SITE_STATUS: number = 0;
 
 const reasons = [
   "You are one of the most closest person to me, if i exclude my family you are the only one who knows the most about me.",
@@ -123,7 +123,7 @@ const Index = () => {
           fontWeight: "bold",
         }}
       >
-        when you see this message let me know, i want to see kitne time baad you open this website ahahhahaha
+        im bored, text me when u see this. bye ahhhhhhhhrrggghhh
       </div>
     );
   }
