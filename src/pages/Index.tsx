@@ -123,7 +123,7 @@ const Index = () => {
           fontWeight: "bold",
         }}
       >
-        Hamid, Shahzaib, Sherry, Hamza, Saim, Rayyan, Abdullah se bolo website banaye!
+        Hamid, Shahzaib, Sherry, Saim, Rayyan, Abdullah se bolo website banaye!
       </div>
     );
   }
