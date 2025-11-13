@@ -4,9 +4,8 @@ import { Card } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight, Sparkles, Star, Zap, PartyPopper } from "lucide-react";
 import { FloatingEmoji } from "@/components/FloatingEmoji";
 import { ConfettiEffect } from "@/components/ConfettiEffect";
-import hamid from "./hamid.jpg";
 
-const SITE_STATUS: number = 0;
+const SITE_STATUS: number = 1;
 
 const reasons = [
   "You are one of the most closest person to me, if i exclude my family you are the only one who knows the most about me.",
@@ -114,7 +113,7 @@ const reasons = [
 const emojis = ["✨", "💫", "⭐", "😇", "🫰", "😌", "🤞🏼", "❤️"];
 
 const Index = () => {
-  if (SITE_STATUS === 0) {
+    if (SITE_STATUS === 0) {
     return (
       <div
         style={{
@@ -124,26 +123,11 @@ const Index = () => {
           fontWeight: "bold",
         }}
       >
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          paddingTop: '1px'
-        } as React.CSSProperties}>
-          <img
-            src={hamid}
-            alt="Description"
-            style={{
-              maxWidth: '300px',
-              width: '100%',
-              height: 'auto'
-            } as React.CSSProperties}
-          />
-        </div>
-
+        Hamid, Shahzaib, Sherry, Saim, Rayyan, Abdullah se bolo website banaye!
       </div>
     );
   }
-  const [currentIndex, setCurrentIndex] = useState(-1);
+  const [currentIndex, setCurrentIndex] = useState(-1); 
   const [direction, setDirection] = useState<'left' | 'right'>('right');
   const [showConfetti, setShowConfetti] = useState(false);
 
@@ -169,8 +153,8 @@ const Index = () => {
     setTimeout(() => setShowConfetti(false), 100);
   };
   const getTwilightColors = () => ({
-    primary: 'hsl(348, 100%, 48%)',
-    secondary: 'hsl(330, 70%, 35%)',
+    primary: 'hsl(348, 100%, 48%)',  
+    secondary: 'hsl(330, 70%, 35%)',  
     accent: 'hsl(340, 80%, 40%)'
   });
   const getGradientForProgress = () => {
@@ -258,13 +242,13 @@ const Index = () => {
           {/* Card Display */}
           {isIntro ? (
             <Card className="p-8 md:p-10 mb-8 bg-gradient-to-br from-primary/10 via-card/90 to-secondary/10 backdrop-blur-xl border-2 border-primary/30 animate-scale-in shadow-xl">
-
+            
               <p className="text-3xl md:text-4xl font-black text-foreground mb-4">
                 Okayyyyy so here it is!!!
               </p>
               <p className="text-lg md:text-xl text-muted-foreground font-medium">
-                Please dont laugh and read all of them if you can, also i am feeling really shy writing this ahhhh mamaaaaaa 😭😭😭😭😭😭😭.
-
+                Please dont laugh and read all of them if you can, also i am feeling really shy writing this ahhhh mamaaaaaa 😭😭😭😭😭😭😭. 
+    
               </p>
             </Card>
           ) : isComplete ? (
