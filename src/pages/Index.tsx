@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight, Sparkles, Star, Zap, PartyPopper } from "lucide-react";
 import { FloatingEmoji } from "@/components/FloatingEmoji";
 import { ConfettiEffect } from "@/components/ConfettiEffect";
-import hamid from "./hamid.jpeg";
+import hamid from "./hamid.jpg";
 
 const SITE_STATUS: number = 0;
 
