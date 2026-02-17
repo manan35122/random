@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, Sparkles, Star, Zap, PartyPopper } from "luc
 import { FloatingEmoji } from "@/components/FloatingEmoji";
 import { ConfettiEffect } from "@/components/ConfettiEffect";
 
-const SITE_STATUS: number = 0;
+const SITE_STATUS: number = 1;
 
 const reasons = [
   "You are one of the most closest person to me, if i exclude my family you are the only one who knows the most about me.",
